@@ -7,22 +7,14 @@ import ContactList from "./ContactList";
 
 const App =()=> {
   const[contacts,setContacts]=useState([]);
-//   const contacts=[
-// {
-// id:"1",
-// name:"irshad ev",
-// email:"irshadev786@gmail.com"
-// },
-// {
-//   id:"2",
-//   name:"umma",
-//   email:"ayishaap786@gmail.com"
-//   },
-//   ];
-  return (
+ const addcontactHandler =(contact)=>{
+  console.log(contact);
+  setContacts([...contacts,contact]);
+ }
+ return (
 <div className="ui_container">
   <Header/>
-  <AddContact/>
+  <AddContact addcontactHandler={addcontactHandler}/>
   <ContactList contacts={contacts}/>
 </div>
   );
